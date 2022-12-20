@@ -77,7 +77,7 @@ class _LoginSignupState extends State<LoginSignup> {
                   minimumSize: MaterialStateProperty.all(const Size(350, 50)),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0)
+                      borderRadius: BorderRadius.circular(30.0), 
                     ),
                   )
                 ),

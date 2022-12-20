@@ -96,7 +96,7 @@ class SignUpForm extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: TextFormField(
-                  controller: pass,
+                  controller: cpass,
                   obscureText: true,
                   obscuringCharacter: '*',
                   decoration: InputDecoration(
@@ -116,7 +116,7 @@ class SignUpForm extends StatelessWidget {
                       return null;
                     }
                   },
-                  //textInputAction: TextInputAction.next,
+                  textInputAction: TextInputAction.next,
                 ),
               ),
 

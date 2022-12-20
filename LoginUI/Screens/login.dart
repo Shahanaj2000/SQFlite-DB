@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sq_flite/LoginUI/Screens/admin.dart';
+import 'package:sq_flite/LoginUI/Screens/home.dart';
+import 'package:sq_flite/LoginUI/Screens/login_signup.dart';
 import 'package:sq_flite/LoginUI/Screens/signup.dart';
 //import 'package:flutter/src/widgets/container.dart';
 //import 'package:flutter/src/widgets/framework.dart';
@@ -26,15 +29,15 @@ class _LoginformState extends State<Loginform> {
   //! Login CheckUp
 
   Future<void> logincheck(String email, String password) async {
-    if (email == "admin@gmail.com" && password == "12345") {
-      //Go to admin page
+    if (email == "admin@gmail.com" && password == "12345678") {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AdminHome()));
     } else {
       var data = await SQLHelper.CheckLogin(email, password);
       if (data.isNotEmpty) {
-        //Go to HomePage
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home(data: data)));
         print("Login Success");
       } else if (data.isEmpty) {
-        //Go to LoginPage
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LoginSignup()));
         print("Login Failed");
       }
     }
